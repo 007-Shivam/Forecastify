@@ -1,0 +1,166 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    object-fit: cover;
+    filter: blur(5px);
+}
+
+.bck{
+    position: absolute;
+    z-index: 10;
+    width: 60%;
+    height: 70vh;
+    background: transparent;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px;
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    position: relative;
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input_place{
+    border-radius: 70px;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border-color: black;
+    border: 3px solid;
+    font-size: 20px;
+    
+}
+
+.info-box{
+    position: relative;
+    bottom: 20px;
+    right: 100px;
+    width: 150%;
+    height: 45vh;
+    background: transparent;
+    border-radius: 50px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    box-shadow: 2px 2px 10px;
+}
+
+.box{
+    display: flex;
+    padding: 50px;
+}
+
+.humidity-info, .pressure-info, .wind-info, .description-info{
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+h5{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.description{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.fa {
+    font-size: 36px;
+    position: relative;
+    bottom: 70px;
+    left: 370px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px)  {
+    .main {
+        width: 100%;
+        height: 93vh;
+    }
+    
+    .bck{
+        width: 80%;
+        height: 80vh;
+        display: inline-grid;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .title{
+        position: relative;
+        margin: 5px 0 0 0;
+    }
+    
+    .form-group{
+        margin: 15px 0 0 0;
+    }
+    
+    .input_place{
+        width: 80%;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 20px;
+        
+    }
+    
+    .info-box{
+        position: relative;
+        bottom: 20px;
+        right: -15px;
+        width: 90%;
+        height: 58vh;
+    }
+    
+    .box{
+        display: grid;
+        padding: 15px 0;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .humidity-info, .pressure-info, .wind-info, .description-info{
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom-box{
+        position: relative;
+        bottom: 20px;
+    }
+    
+    h5{
+        font-weight: 600;
+        font-size: 18px;
+    }
+    
+    .fa {
+        font-size: 36px;
+        position: relative;
+        left: 210px;
+        bottom: 45px;
+    }    
+}
