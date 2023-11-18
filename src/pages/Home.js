@@ -33,8 +33,14 @@ export default function Home() {
                 main: weather[0].main,
                 pressure,
             });
-        } catch (error) {
-            console.error('Error fetching weather data:');
+        } 
+        catch (error) {
+            if (error.response && error.response.status === 404) {
+                window.alert('Invalid place. Please enter a valid location.');
+                setPlace('');
+            } else {
+                console.error('Error fetching weather data:', error);
+            }
         }
     };
 
@@ -45,10 +51,10 @@ export default function Home() {
                 <h3 className='title text-center font-weight-bold'>
                     Welcome to Forecastify
                 </h3>
-                <div class='form-group'>
+                <div className='form-group'>
                     <input
                         type='place'
-                        class='input_place'
+                        className='input_place'
                         id='place'
                         placeholder='Enter Place'
                         value={place}
