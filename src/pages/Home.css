@@ -1,6 +1,6 @@
 .main {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ h5{
 @media only screen and (max-width: 768px)  {
     .main {
         width: 100%;
-        height: 93vh;
+        height: 90vh;
     }
     
     .bck{

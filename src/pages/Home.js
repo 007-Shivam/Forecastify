@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Home.css';
+import FooterComponent from '../components/FooterComponent';
 
 import videoBG from '../assets/Bg.mp4';
 
@@ -33,7 +34,7 @@ export default function Home() {
                 main: weather[0].main,
                 pressure,
             });
-        } 
+        }
         catch (error) {
             if (error.response && error.response.status === 404) {
                 window.alert('Invalid place. Please enter a valid location.');
@@ -45,53 +46,57 @@ export default function Home() {
     };
 
     return (
-        <div className='main w-100'>
-            <video src={videoBG} autoPlay loop muted className='w-100 h-100' />
-            <div className='bck'>
-                <h3 className='title text-center font-weight-bold'>
-                    Welcome to Forecastify
-                </h3>
-                <div className='form-group'>
-                    <input
-                        type='place'
-                        className='input_place'
-                        id='place'
-                        placeholder='Enter Place'
-                        value={place}
-                        onChange={(e) => setPlace(e.target.value)}
-                    />
-                </div>
-                <a onClick={getWeather}>
-                    <i className='fa fa-search'></i>
-                </a>
-                <div className='info-box'>
-                    <div className='box'>
-                        <div className='inner-box wind-info'>
-                            <h5>WIND</h5>
-                            <p className='description'>{weatherData.wind} m/s</p>
-                        </div>
-                        <div className='inner-box humidity-info'>
-                            <h5>HUMIDITY</h5>
-                            <p className='description'>{weatherData.humidity} %</p>
-                        </div>
+        <>
+            <div className='main w-100'>
+                <video src={videoBG} autoPlay loop muted className='w-100 h-100' />
+                <div className='bck'>
+                    <h3 className='title text-center font-weight-bold'>
+                        Welcome to Forecastify
+                    </h3>
+                    <div className='form-group'>
+                        <input
+                            type='place'
+                            className='input_place'
+                            id='place'
+                            placeholder='Enter Place'
+                            value={place}
+                            onChange={(e) => setPlace(e.target.value)}
+                        />
                     </div>
+                    <a onClick={getWeather}>
+                        <i className='fa fa-search'></i>
+                    </a>
+                    <div className='info-box'>
+                        <div className='box'>
+                            <div className='inner-box wind-info'>
+                                <h5>WIND</h5>
+                                <p className='description'>{weatherData.wind} m/s</p>
+                            </div>
+                            <div className='inner-box humidity-info'>
+                                <h5>HUMIDITY</h5>
+                                <p className='description'>{weatherData.humidity} %</p>
+                            </div>
+                        </div>
 
-                    <div className='box bottom-box'>
-                        <div className='inner-box description-info'>
-                            <h5>DESCRIPTION</h5>
-                            <p className='description'>{weatherData.main}</p>
-                        </div>
-                        <div className='inner-box pressure-info'>
-                            <h5>TEMPERATURE</h5>
-                            <p className='description'>{weatherData.temp} &deg;C</p>
-                        </div>
-                        <div className='inner-box pressure-info'>
-                            <h5>PRESSURE</h5>
-                            <p className='description'>{weatherData.pressure} hPa</p>
+                        <div className='box bottom-box'>
+                            <div className='inner-box description-info'>
+                                <h5>DESCRIPTION</h5>
+                                <p className='description'>{weatherData.main}</p>
+                            </div>
+                            <div className='inner-box pressure-info'>
+                                <h5>TEMPERATURE</h5>
+                                <p className='description'>{weatherData.temp} &deg;C</p>
+                            </div>
+                            <div className='inner-box pressure-info'>
+                                <h5>PRESSURE</h5>
+                                <p className='description'>{weatherData.pressure} hPa</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <FooterComponent />
+        </>
+
     );
 }
